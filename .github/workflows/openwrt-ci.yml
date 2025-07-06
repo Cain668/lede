@@ -56,6 +56,11 @@ jobs:
           large-packages: true
           swap-storage: true
 
+      - name: Use custom .config file
+        run: |
+          cp config/.config .config
+
+
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
